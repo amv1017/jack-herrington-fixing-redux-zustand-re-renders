@@ -1,5 +1,6 @@
 import { createReducer, createAction, configureStore } from '@reduxjs/toolkit'
 
+export const doNothing = createAction('doNothing')
 export const addToFirst = createAction('addToFirst')
 export const addToSecond = createAction('addToSecond')
 
@@ -14,6 +15,7 @@ const valuesReducer = createReducer<{
     numbers: [],
   },
   (builder) => {
+    builder.addCase(doNothing, (state) => ({ ...state }))
     builder.addCase(addToFirst, (state) => {
       state.firstNumber++
       state.numbers = [state.firstNumber]
