@@ -22,8 +22,10 @@ const AddToFirstButton = () => {
 }
 
 const FirstValue = () => {
+  // improper
   const { firstNumber } = useStore()
-  console.log('1st') // only 1st updates
+  // const firstNumber = useStore((state) => state.firstNumber)
+  console.log('1st')
   return (
     <Text size={'xl'} p={5}>
       First value: {firstNumber}
