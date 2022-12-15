@@ -1,13 +1,7 @@
 import React from 'react'
 import { Box, Button, Text } from '@mantine/core'
 import { useSelector, useDispatch, Provider, shallowEqual } from 'react-redux'
-import {
-  store,
-  RootState,
-  addToFirst,
-  addToSecond,
-  doNothing,
-} from './store'
+import { store, RootState, addToFirst, addToSecond, doNothing } from './store'
 
 const DoNothingButton = () => {
   const dispatch = useDispatch()
@@ -61,10 +55,10 @@ const SecondValue = () => {
 const NumbersValue = () => {
   // shallowEqual helps to compare arrays
   const numbers = useSelector((state: RootState) => state.numbers, shallowEqual)
-  console.log('2nd') // both updates
+  console.log('numbers')
   return (
     <Text size={'xl'} p={5}>
-      Numbers: {numbers.join(", ")}
+      Numbers: {numbers.join(', ')}
     </Text>
   )
 }
